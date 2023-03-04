@@ -21,7 +21,7 @@
                 <td>{{ page.id }}</td>
                 <td>{{ page.title }}</td>
                 <td>{{ page.image }}</td>
-                <td>{{ page.text }}</td>
+                <td>{{ page.text|raw }}</td>
                 <td>
                     <a href="{{ path('app_page_show', {'id': page.id}) }}">show</a>
                     <a href="{{ path('app_page_edit', {'id': page.id}) }}">edit</a>
