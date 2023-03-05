@@ -10,8 +10,8 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Image</th>
-                <th>Text</th>
+                {# <th>Image</th> #}
+                {# <th>Text</th> #}
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,8 +20,8 @@
             <tr>
                 <td>{{ page.id }}</td>
                 <td>{{ page.title }}</td>
-                <td>{{ page.image }}</td>
-                <td>{{ page.text|raw }}</td>
+                {# <td>{{ page.image }}</td> #}
+                {# <td>{{ page.text|raw }}</td> #}
                 <td>
                     <a href="{{ path('app_page_show', {'id': page.id}) }}">show</a>
                     <a href="{{ path('app_page_edit', {'id': page.id}) }}">edit</a>
