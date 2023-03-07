@@ -10,8 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Image</th>
-                <th>Text</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,12 +17,10 @@
         {% for page in pages %}
             <tr>
                 <td>{{ page.id }}</td>
-                <td>{{ page.title }}</td>
-                <td>{{ page.image }}</td>
-                <td>{{ page.text }}</td>
+                <td>{{ page.title }}</td>                
                 <td>
-                    <a href="{{ path('app_page_show', {'id': page.id}) }}">show</a>
-                    <a href="{{ path('app_page_edit', {'id': page.id}) }}">edit</a>
+                    <a  class="btn btn-primary" href="{{ path('app_page_show', {'id': page.id}) }}">show</a>
+                    <a  class="btn btn-success" href="{{ path('app_page_edit', {'id': page.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_page_new') }}">Create new</a>
+    <a  class="btn btn-warning" href="{{ path('app_page_new') }}">Create new</a>
 {% endblock %}
