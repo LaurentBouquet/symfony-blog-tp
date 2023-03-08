@@ -32,25 +32,27 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/page/1">Accueil</a>
+							<a class="nav-link active" aria-current="page" href="/page/1">{{ 'Home'|trans }}</a>
 						</li>
+						
+					{% if is_granted('ROLE_ADMIN') %}							
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Formations
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a class="dropdown-item" href="#">Nos formations</a>
+									<a class="dropdown-item" href="#">{{ 'Our formations'|trans }} </a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">Les formations à venir</a>
+									<a class="dropdown-item" href="#">{{ 'Formations in coming'|trans }}</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">Donner son avis sur une formation</a>
+									<a class="dropdown-item" href="#">{{ 'Give your opinion'|trans }}</a>
 								</li>
 								<li><hr class="dropdown-divider"></li>
 								<li>
-									<a class="dropdown-item" href="#">Proposer une formation</a>
+									<a class="dropdown-item" href="#">{{ 'To suggest a formation'|trans }}</a>
 								</li>
 							</ul>
 						</li>
@@ -70,11 +72,20 @@
 								</li>
 							</ul>
 						</li>
+					{% endif %}						
+					
 					</ul>
 
 					<ul class="navbar-nav align-right">
 						<li class="nav-item">
-							<a class="nav-link" href="/login">Se connecter</a>
+							{% if app.user %}
+								<a class="nav-link" href="/logout">Sign Out</a>
+							{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="/register">Sign Up</a>
+							</li>
+								<a class="nav-link" href="/login">Sign In</a>
+							{% endif %}
 						</li>
 					</ul>
 
