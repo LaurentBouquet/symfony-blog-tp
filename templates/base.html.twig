@@ -60,15 +60,28 @@
 							<a class="nav-link" href="#">Le centre de formation</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Pages
+							<a class="nav-link dropdown-toggle" href="/category" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ 'Categories'|trans }}
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a class="dropdown-item" href="/page">Liste des pages</a>
+									<a class="dropdown-item" href="/category">{{ 'Categories Index'|trans }}</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="/page/new">Créer une page</a>
+									<a class="dropdown-item" href="/category/new">{{ 'Add new category'|trans }}</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ 'Pages'|trans }}
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="/page">{{ 'Page Index'|trans }}</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/page/new">{{ 'Add new page'|trans }}</a>
 								</li>
 							</ul>
 						</li>
