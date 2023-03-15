@@ -93,6 +93,14 @@
         <source>Save</source>
         <target>Enregistrer</target>
       </trans-unit>
+      <trans-unit id="HGMzUJ3" resname="show">
+        <source>show</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Modifier</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
