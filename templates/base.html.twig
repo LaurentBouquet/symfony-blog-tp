@@ -59,6 +59,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="#">Le centre de formation</a>
 						</li>
+
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								{{ 'Pages'|trans }}
@@ -72,6 +73,21 @@
 								</li>
 							</ul>
 						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ 'Formations'|trans }}
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="/formation">{{ 'Formation Index'|trans }}</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/formation/new">{{ 'Add new formation'|trans }}</a>
+								</li>
+							</ul>
+						</li>
+
 					{% endif %}						
 					
 					</ul>
