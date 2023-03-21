@@ -22,12 +22,14 @@ class UserFixtures extends Fixture
         $superAdmin->setEmail('superadmin@domain.tld');
 
         $plaintextPassword = "superadmin";
-        $hashedPassword = $this->passwordHasher(
+        $hashedPassword = $this->passwordHasher->hashPassword(
             $superAdmin,
             $plaintextPassword
         );
         $superAdmin->setPassword($hashedPassword);
-
+        $superAdmin->setRoles([
+            "ROLE_SUPER_ADMIN",
+        ]);
         $manager->persist($superAdmin);
 
         $manager->flush();
