@@ -1,8 +1,0 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-
-    <div>
-        <button class="btn btn-success">{{ button_label|default('Save'|trans) }}</button>
-        <a class="btn btn-secondary" href="{{ path('app_category_index') }}">{{ 'back to list'|trans }}</a>
-    </div>
-{{ form_end(form) }}
