@@ -101,6 +101,22 @@
         <source>edit</source>
         <target>Modifier</target>
       </trans-unit>
+      <trans-unit id="OHfRSIm" resname="Catalog">
+        <source>Catalog</source>
+        <target>Catalogue</target>
+      </trans-unit>
+      <trans-unit id="_8e_aDo" resname="Formations">
+        <source>Formations</source>
+        <target>Formations</target>
+      </trans-unit>
+      <trans-unit id="2J0VU7y" resname="Formation Index">
+        <source>Formation Index</source>
+        <target>Liste des formations</target>
+      </trans-unit>
+      <trans-unit id="HsbX2Ac" resname="Add new formation">
+        <source>Add new formation</source>
+        <target>Ajouter une formation</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

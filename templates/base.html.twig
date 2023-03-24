@@ -34,15 +34,18 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="/page/1">{{ 'Home'|trans }}</a>
 						</li>
-						
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/formation/catalog">{{ 'Catalog'|trans }}</a>
+						</li>
+
 					{% if is_granted('ROLE_ADMIN') %}							
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="/formation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Formations
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a class="dropdown-item" href="#">{{ 'Our formations'|trans }} </a>
+									<a class="dropdown-item" href="/formation">{{ 'Our formations'|trans }} </a>
 								</li>
 								<li>
 									<a class="dropdown-item" href="#">{{ 'Formations in coming'|trans }}</a>
