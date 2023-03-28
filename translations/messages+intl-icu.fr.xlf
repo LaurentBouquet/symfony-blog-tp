@@ -117,6 +117,10 @@
         <source>Add new formation</source>
         <target>Ajouter une formation</target>
       </trans-unit>
+      <trans-unit id="hCrEGET" resname="Formation catalog">
+        <source>Formation catalog</source>
+        <target>Catalogue de nos formations</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
