@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class Formation1Type extends AbstractType
 {
@@ -17,10 +19,18 @@ class Formation1Type extends AbstractType
             ->add('content', CKEditorType::class)
             ->add('capacity')
             ->add('price')
-            ->add('createdAt')
+            // ->add('createdAt')
             ->add('description')
-            ->add('startDateTime')
-            ->add('endDateTime')
+            ->add('startDateTime', DateType::class, [
+                'widget' => 'single_text',                
+                'format' => 'yyyy-MM-dd',
+                'input' => 'datetime_immutable',
+            ])
+            ->add('endDateTime', DateType::class, [
+                'widget' => 'single_text',                
+                'format' => 'yyyy-MM-dd',
+                'input' => 'datetime_immutable',
+            ])
             ->add('speaker')
             ->add('createdBy')
         ;
