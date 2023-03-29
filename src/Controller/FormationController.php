@@ -15,6 +15,38 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/formation')]
 class FormationController extends AbstractController
 {
+
+    #[Route('/pdf/{id}', name: 'app_formation_pdf', methods: ['GET'])]
+    public function pdf(Formation $formation): Response
+    {
+        $pdf = new \TCPDF();
+
+        $pdf->SetAuthor('SIO1 team');
+        $pdf->SetTitle($formation->getName());
+        $pdf->setCellPaddings(1, 1, 1, 1);
+        $pdf->setCellMargins(1, 1, 1, 1);
+
+        $pdf->AddPage();
+
+        // $pdf->setXY(10, 10);
+        $pdf->image('images/fcpro3.jpg', 10, 10, 50, 40);
+        
+
+        $pdf->setXY(10, 80);
+        $pdf->SetFillColor(255, 255, 255);
+        $pdf->SetFont('helvetica', '', 18);
+        $pdf->SetTextColor(0, 0, 255);
+        $pdf->MultiCell(185, 10, $formation->getName(), 0, 'P', 1, 0, '', '', true);
+
+        $pdf->setXY(10, 105);
+        $pdf->SetFillColor(240, 240, 240);
+        $pdf->SetFont('times', '', 12);
+        $pdf->SetTextColor(0, 0, 255);
+        $pdf->writeHTML($formation->getContent());
+
+        return $pdf->Output('fcpro-formation-' . $formation->getId() . '.pdf', 'I');
+    }
+
     #[Route('/catalog', name: 'app_formation_catalog', methods: ['GET'])]
     public function catalog(FormationRepository $formationRepository): Response
     {
@@ -90,7 +122,7 @@ class FormationController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        if ($this->isCsrfTokenValid('delete'.$formation->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $formation->getId(), $request->request->get('_token'))) {
             $formationRepository->remove($formation, true);
         }
 

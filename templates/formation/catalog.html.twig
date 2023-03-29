@@ -10,7 +10,7 @@
     {% set number = 0 %}
 	<div class="accordion" id="accordionExample">
 		{% for formation in formations %}
-        {% set number = number + 1 %}
+        	{% set number = number + 1 %}
 			<div class="accordion-item">
 				<h2 class="accordion-header">
 					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ number }}" aria-expanded="true" aria-controls="collapse-{{ number }}">
@@ -22,6 +22,8 @@
 						<strong>{{ formation.startDateTime|date }}</strong>
                         <br/>
 						{{ formation.content|raw }}
+						<br/>
+						<a class="btn btn-primary" href="/formation/pdf/{{ formation.id }}" target="_blank">{{ 'Download PDF'|trans }}</a>						
 					</div>
 				</div>
 			</div>
