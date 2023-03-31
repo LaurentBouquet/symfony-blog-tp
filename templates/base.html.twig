@@ -10,15 +10,18 @@
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
-			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+			<link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 			<link rel="stylesheet" href="starter-template.css">
+			<link href="/css/fontawesome.css" rel="stylesheet">
+			<link href="/css/brands.css" rel="stylesheet">
+			<link href="/css/solid.css" rel="stylesheet">
 			<link rel="stylesheet" href="style.css">
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+			<script src="/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 		{% endblock %}
 	</head>
 	<body>
@@ -38,61 +41,62 @@
 							<a class="nav-link active" aria-current="page" href="/formation/catalog">{{ 'Catalog'|trans }}</a>
 						</li>
 
-					{% if is_granted('ROLE_ADMIN') %}							
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="/formation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Formations
-							</a>
-							<ul class="dropdown-menu">
-								<li>
-									<a class="dropdown-item" href="/formation">{{ 'Our formations'|trans }} </a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">{{ 'Formations in coming'|trans }}</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">{{ 'Give your opinion'|trans }}</a>
-								</li>
-								<li><hr class="dropdown-divider"></li>
-								<li>
-									<a class="dropdown-item" href="#">{{ 'To suggest a formation'|trans }}</a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Le centre de formation</a>
-						</li>
+						{% if is_granted('ROLE_ADMIN') %}
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="/formation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Formations
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="/formation">{{ 'Our formations'|trans }}
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">{{ 'Formations in coming'|trans }}</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#">{{ 'Give your opinion'|trans }}</a>
+									</li>
+									<li><hr class="dropdown-divider"></li>
+									<li>
+										<a class="dropdown-item" href="#">{{ 'To suggest a formation'|trans }}</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Le centre de formation</a>
+							</li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								{{ 'Pages'|trans }}
-							</a>
-							<ul class="dropdown-menu">
-								<li>
-									<a class="dropdown-item" href="/page">{{ 'Page Index'|trans }}</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="/page/new">{{ 'Add new page'|trans }}</a>
-								</li>
-							</ul>
-						</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									{{ 'Pages'|trans }}
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="/page">{{ 'Page Index'|trans }}</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="/page/new">{{ 'Add new page'|trans }}</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								{{ 'Formations'|trans }}
-							</a>
-							<ul class="dropdown-menu">
-								<li>
-									<a class="dropdown-item" href="/formation">{{ 'Formation Index'|trans }}</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="/formation/new">{{ 'Add new formation'|trans }}</a>
-								</li>
-							</ul>
-						</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									{{ 'Formations'|trans }}
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="/formation">{{ 'Formation Index'|trans }}</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="/formation/new">{{ 'Add new formation'|trans }}</a>
+									</li>
+								</ul>
+							</li>
 
-					{% endif %}						
-					
+						{% endif %}
+
 					</ul>
 
 					<ul class="navbar-nav align-right">
@@ -100,9 +104,9 @@
 							{% if app.user %}
 								<a class="nav-link" href="/logout">Sign Out</a>
 							{% else %}
-							<li class="nav-item">
-								<a class="nav-link" href="/register">Sign Up</a>
-							</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/register">Sign Up</a>
+								</li>
 								<a class="nav-link" href="/login">Sign In</a>
 							{% endif %}
 						</li>
@@ -113,16 +117,15 @@
 		</nav>
 
 
-		<div class="col-lg-8 mx-auto p-4 py-md-5">
-			<header>
-			</header>
+		<div class="col-lg-12 mx-auto p-4 py-md-5">
+			<header></header>
 			<main>
 
 				{% block body %}{% endblock %}
 
 			</main>
 			<footer class="pt-5 my-5 text-muted border-top">
-				Created by the SIO team &middot; &copy;				
+				Created by the SIO team &middot; &copy;
 			</footer>
 		</div>
 	</body>
