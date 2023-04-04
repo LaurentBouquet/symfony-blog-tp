@@ -121,6 +121,22 @@
         <source>Formation catalog</source>
         <target>Catalogue de nos formations</target>
       </trans-unit>
+      <trans-unit id="xlmg0O3" resname="Illustration">
+        <source>Illustration</source>
+        <target>Illustration</target>
+      </trans-unit>
+      <trans-unit id="az2SQK9" resname="Please upload a valid image file">
+        <source>Please upload a valid image file</source>
+        <target>Veuillez fournir un fichier image valide</target>
+      </trans-unit>
+      <trans-unit id="YYO_CIP" resname="Download PDF">
+        <source>Download PDF</source>
+        <target>Télécharger le PDF</target>
+      </trans-unit>
+      <trans-unit id="eIqSpTM" resname="An error is append: ">
+        <source>An error is append: </source>
+        <target>Une erreur est intervenue : </target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
