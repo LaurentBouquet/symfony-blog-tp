@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Page;
 use App\Form\PageType;
 use App\Repository\PageRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/page')]
 class PageController extends AbstractController
@@ -17,7 +18,7 @@ class PageController extends AbstractController
     public function index(PageRepository $pageRepository): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        
+
         return $this->render('page/index.html.twig', [
             'pages' => $pageRepository->findAll(),
         ]);
@@ -73,11 +74,14 @@ class PageController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_page_delete', methods: ['POST'])]
-    public function delete(Request $request, Page $page, PageRepository $pageRepository): Response
+    public function delete(Request $request, Page $page, TranslatorInterface $translator, PageRepository $pageRepository): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        
-        if ($this->isCsrfTokenValid('delete'.$page->getId(), $request->request->get('_token'))) {
+
+        if ($this->isCsrfTokenValid('delete' . $page->getId(), $request->request->get('_token'))) {
+            if ($page->getId() < 11) {
+                $this->addFlash('warning', $translator->trans('This page is protected !'));
+            }
             $pageRepository->remove($page, true);
         }
 

@@ -37,39 +37,34 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="/page/1">{{ 'Home'|trans }}</a>
 						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/formation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Nos formations
+							</a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-item">
+									<a class="nav-link" href="/formation/futur">{{ 'Formations in coming'|trans }}</a>
+								</li>
+								<li class="dropdown-item">
+									<a class="nav-link" aria-current="page" href="/formation/catalog">{{ 'Catalog'|trans }}</a>
+								</li>
+								<li class="dropdown-item">
+									<a class="nav-link" href="#">{{ 'Give your opinion'|trans }}</a>
+								</li>								
+								<li class="dropdown-item">
+									<a class="nav-link" href="#">{{ 'Request'|trans }}</a>
+								</li>
+							</ul>
+						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/formation/catalog">{{ 'Catalog'|trans }}</a>
+							<a class="nav-link" href="/page/2">Le centre de formation</a>
 						</li>
 
 						{% if is_granted('ROLE_ADMIN') %}
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="/formation" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Formations
-								</a>
-								<ul class="dropdown-menu">
-									<li>
-										<a class="dropdown-item" href="/formation">{{ 'Our formations'|trans }}
-										</a>
-									</li>
-									<li>
-										<a class="dropdown-item" href="#">{{ 'Formations in coming'|trans }}</a>
-									</li>
-									<li>
-										<a class="dropdown-item" href="#">{{ 'Give your opinion'|trans }}</a>
-									</li>
-									<li><hr class="dropdown-divider"></li>
-									<li>
-										<a class="dropdown-item" href="#">{{ 'To suggest a formation'|trans }}</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Le centre de formation</a>
-							</li>
-
-							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									{{ 'Pages'|trans }}
+									{{ 'Site management'|trans }}
 								</a>
 								<ul class="dropdown-menu">
 									<li>
@@ -78,14 +73,7 @@
 									<li>
 										<a class="dropdown-item" href="/page/new">{{ 'Add new page'|trans }}</a>
 									</li>
-								</ul>
-							</li>
-
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="/page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									{{ 'Formations'|trans }}
-								</a>
-								<ul class="dropdown-menu">
+									<li><hr class="dropdown-divider"></li>
 									<li>
 										<a class="dropdown-item" href="/formation">{{ 'Formation Index'|trans }}</a>
 									</li>
