@@ -95,7 +95,7 @@ class FormationController extends AbstractController
         dump($formationsPerThree);
 
         return $this->render('formation/futur.html.twig', [
-            'formations' => $formationsPerThree,
+            'tousLespaquets' => $formationsPerThree,
         ]);
     }
 
