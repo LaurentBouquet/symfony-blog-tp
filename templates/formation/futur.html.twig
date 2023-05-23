@@ -15,17 +15,18 @@
 		</div>
 		<div class="carousel-inner">
 
+			{% set i = 0 %}
 			{% for paquetDe3Formations in tousLespaquets %}
-
-			<div class="carousel-item active">
+			{% set i = i + 1 %}
+			<div class="carousel-item {% if i == 1 %} active {% endif %}">
 					<div class="row"> 
 					<div class="col">
 						<div class="card" style="width: 18rem;">
 							<img src="/uploads/images/{{ paquetDe3Formations[1].imageFileName }}" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">{{ paquetDe3Formations[1].name }}</h5>
-								<p class="card-text">{{ paquetDe3Formations[1].description }}</p>
 								<a href="/formation/pdf/{{ paquetDe3Formations[1].id }}" target="_blank" class="btn btn-primary">{{ 'PDF download'|trans }}</a>
+								<p class="card-text">{{ paquetDe3Formations[1].description }}</p>
 							</div>
 						</div>
 					</div>
@@ -35,8 +36,8 @@
 							<img src="/uploads/images/{{ paquetDe3Formations[2].imageFileName }}" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">{{ paquetDe3Formations[2].name }}</h5>
-								<p class="card-text">{{ paquetDe3Formations[2].description }}</p>
 								<a href="/formation/pdf/{{ paquetDe3Formations[2].id }}" target="_blank" class="btn btn-primary">{{ 'PDF download'|trans }}</a>
+								<p class="card-text">{{ paquetDe3Formations[2].description }}</p>
 							</div>
 						</div>
 					</div>
@@ -47,8 +48,8 @@
 							<img src="/uploads/images/{{ paquetDe3Formations[3].imageFileName }}" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">{{ paquetDe3Formations[3].name }}</h5>
-								<p class="card-text">{{ paquetDe3Formations[3].description }}</p>
 								<a href="/formation/pdf/{{ paquetDe3Formations[3].id }}" target="_blank" class="btn btn-primary">{{ 'PDF download'|trans }}</a>
+								<p class="card-text">{{ paquetDe3Formations[3].description }}</p>
 							</div>
 						</div>
 					</div>

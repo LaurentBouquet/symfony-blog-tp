@@ -137,6 +137,22 @@
         <source>An error is append: </source>
         <target>Une erreur est intervenue : </target>
       </trans-unit>
+      <trans-unit id="ib2O.Pb" resname="This page is protected !">
+        <source>This page is protected !</source>
+        <target>Cette page est protégée !</target>
+      </trans-unit>
+      <trans-unit id="S0LGaQ6" resname="Administration">
+        <source>Administration</source>
+        <target>Administration</target>
+      </trans-unit>
+      <trans-unit id="xvhD9sZ" resname="Formation index">
+        <source>Formation index</source>
+        <target>Liste des formations</target>
+      </trans-unit>
+      <trans-unit id="ZRSU1Mx" resname="PDF download">
+        <source>PDF download</source>
+        <target>Télécharger le PDF</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
